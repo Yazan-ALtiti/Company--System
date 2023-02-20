@@ -1,6 +1,7 @@
 package com.example.Java.Entities;
 
 import lombok.*;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -19,11 +20,13 @@ public class enrollmentEntity {
     @NonNull
     String start;
     @NonNull
-    String leave;
+    String leaving;
+    @NonNull
+    String date;
 
-   /* @NonNull
+    @NonNull
     @ManyToOne
     @JoinColumn(name = "employee_id")
-    employeeEntity employee;*/
+    employeeEntity employee;
 
 }

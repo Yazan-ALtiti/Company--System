@@ -1,11 +1,9 @@
 package com.example.Java.Entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
@@ -25,7 +23,13 @@ public class employeeEntity {
     String email;
     @NonNull
     int salary;
-//    @OneToMany(mappedBy = "employee")
-//    List<enrollmentEntity>enrollments;
+
+    @OneToMany(mappedBy = "employee")
+    List<enrollmentEntity> enrollments;
+    @NonNull
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name = "department_id")
+    departmentEntity department;
 
 }
